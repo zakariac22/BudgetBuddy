@@ -1,60 +1,57 @@
 # BudgetBuddy
 
-## Project Pitch
-BudgetBuddy is a simple money-tracking app that helps people keep track of what they earn and spend. It makes managing money easier by showing where money goes and helping users make better financial choices.
+BudgetBuddy is a money-tracking app that helps people keep track of what they earn and spend. Users can enter daily expenses, sort them into categories like food, transportation, and entertainment, and get a clear view of their spending habits. The goal is to make managing money less stressful and easier to understand, especially for beginners.
 
-## Project Description
-BudgetBuddy allows users to enter their daily expenses and sort them into categories like food, transportation, and entertainment. It gives users a clear view of their spending so they can understand their habits and stay within a budget. The goal of the project is to make managing money less stressful and easier to understand, especially for beginners.
+Built for college students, young adults, and anyone looking to build better spending habits.
 
-## Primary Users
-- College students
-- Young adults managing finances
-- Anyone wanting better spending habits
+## Tech Stack
+
+- **Frontend:** Next.js, React
+- **Database:** Supabase (PostgreSQL)
+- **CI/CD:** GitHub Actions
+
+## Getting Started
+
+Make sure you have [Node.js](https://nodejs.org/) and [Git](https://git-scm.com/) installed.
+
+**1. Clone the repo**
+```bash
+git clone https://github.com/Shafin-Rehman/product-proposal.git
+cd product-proposal
+```
+
+**2. Install dependencies**
+```bash
+npm install
+```
+
+**3. Set up environment variables**
+
+Create a `.env.local` file in the root folder and add your Supabase credentials:
+```
+NEXT_PUBLIC_SUPABASE_URL= https://vsnygrmhdrpryoehuadn.supabase.co
+NEXT_PUBLIC_SUPABASE_ANON_KEY= eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZzbnlncm1oZHJwcnlvZWh1YWRuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzI4MzQxMzAsImV4cCI6MjA4ODQxMDEzMH0.z65N4fkMAAMTqWrFWSZIJ6ZzsM4rcCmA8fgR9wbmTF0
+```
+
+
+
+**4. Start the app**
+```bash
+npm run dev
+```
+
+
+## CI/CD Pipeline
+
+This project uses two GitHub Actions pipelines that trigger automatically on every push to main:
+
+- **Backend CI** — installs dependencies, runs tests, and checks code coverage every time backend code changes
+- **DB Migrations** — automatically pushes database schema changes to Supabase so no one has to update the database manually
 
 ## Features
-- Add and categorize expenses
-- View total spending
+
+- Add and categorize daily expenses
+- Track monthly income
 - Set monthly budgets
-- Track income
-- Simple financial summary
-
-## Benefits
-- Encourages responsible spending
-- Helps users save money
-- Improves financial awareness
-- Easy to use for beginners
-
-## Development Phases
-
-### Phase 1: Project Setup & Architecture
-- Initialize the application repository (e.g., Next.js/React)
-- Set up the styling framework (e.g., Tailwind CSS)
-- Configure the database connection (e.g., PostgreSQL)
-
-### Phase 2: Database Design
-- Create schemas for `Users`, `Categories`, `Transactions`, and `Budgets`
-- Set up relational connections between tables
-
-### Phase 3: Backend API Development
-- Build the secure authentication system (sign up, login)
-- Create API endpoints for fetching and saving user financial data
-
-### Phase 4: Frontend Development & UI
-- Set up application routing (Dashboard, Transactions, Budgets)
-- Build the authentication screens and global state management
-- Construct the base dashboard layout
-
-### Phase 5: Core Feature Implementation
-- Build the forms to add and categorize expenses/income
-- Develop the budget-setting interface with limit notifications
-- Implement the main dashboard charts for financial summaries
-
-### Phase 6: Polish and Refinement
-- Add beginner-friendly empty states and onboarding
-- Implement robust error handling and input validation
-- Ensure the application is fully responsive on mobile devices
-
-### Phase 7: Deployment
-- Deploy the database to a hosting provider
-- Deploy the web application
-- Conduct final end-to-end testing
+- View total spending and financial summary
+- Budget threshold alerts when spending limit is reached
