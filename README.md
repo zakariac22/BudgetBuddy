@@ -48,6 +48,42 @@ This project uses two GitHub Actions pipelines that trigger automatically on eve
 - **Backend CI** — installs dependencies, runs tests, and checks code coverage every time backend code changes
 - **DB Migrations** — automatically pushes database schema changes to Supabase so no one has to update the database manually
 
+## Testing
+
+### Where tests should be added
+
+Add API route tests in:
+
+```
+nextjs/__tests__/
+```
+
+Use one test file per feature or route group. Example:
+
+- `auth.test.js` — signup and login routes
+
+Tests target the actual Next.js App Router route handler logic. External dependencies are mocked with `jest.mock()` so no real DB connection is needed.
+
+### How to run tests
+
+Tests must be run from inside the `nextjs` directory:
+
+```bash
+cd nextjs
+npm test -- --coverage
+```
+
+This runs all test files in `nextjs/__tests__/` and generates a coverage report at:
+
+```
+nextjs/coverage/lcov-report/index.html
+```
+
+### Helpful links
+
+- [Jest docs](https://jestjs.io/docs/getting-started)
+- [Next.js testing guide (App Router)](https://nextjs.org/docs/app/building-your-application/testing/jest)
+
 ## Features
 
 - Add and categorize daily expenses
