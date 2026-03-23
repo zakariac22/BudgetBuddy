@@ -1,3 +1,6 @@
+import { redirect } from 'next/navigation';
+
 export default function Home() {
-  return <main><h1>API Server</h1></main>
+  redirect('/login');
+  return null;
 }
